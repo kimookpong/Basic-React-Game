@@ -241,7 +241,7 @@ const ABgame = () => {
           <div className="bg">
             <div className="bg-inner"></div>
           </div>
-          <div className="text">Start Again!</div>
+          <div className="text">Start Game!</div>
         </button>
       ) : (
         <div>
@@ -262,7 +262,7 @@ const ABgame = () => {
                 <div className="bg">
                   <div className="bg-inner"></div>
                 </div>
-                <div className="text">Start Game</div>
+                <div className="text">Start Again!</div>
               </button>
             </div>
           ) : (
