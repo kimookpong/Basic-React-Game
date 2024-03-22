@@ -243,6 +243,7 @@ const ABgame = () => {
       <h1 className="title">
         AB Game in <span>React</span>
       </h1>
+      <h5 className="subtitle">by kimookpong</h5>
       {play === 0 ? (
         <button onClick={startGame} className="btn cube cube-hover">
           <div className="bg-top">
