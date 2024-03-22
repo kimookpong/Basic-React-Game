@@ -246,18 +246,51 @@ const ABgame = () => {
       </h1>
       <h5 className="subtitle">by kimookpong</h5>
       {play === 0 ? (
-        <button onClick={startGame} className="btn cube cube-hover">
-          <div className="bg-top">
-            <div className="bg-inner"></div>
+        <div className="">
+          <button onClick={startGame} className="btn cube cube-hover">
+            <div className="bg-top">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg-right">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="text">Start Game!</div>
+          </button>
+          <div className="howToPlay">
+            <h5>How to Play the AB Game</h5>
+            <div>
+              The AB Game is a guessing game where players try to guess a
+              4-digit number, with each digit being unique.
+            </div>
+            <h5>Rules</h5>
+            <div>
+              • The game consists of a target 4-digit number where each digit is
+              unique.
+            </div>
+            <div>• Players attempt to guess the target number.</div>
+            <div>
+              • For each guess: If a digit in the guess matches a digit in the
+              target number and is in the same position, it earns a point,
+              represented as A. If a digit in the guess matches a digit in the
+              target number but is in a different position, it earns a point,
+              represented as B.
+            </div>
+            <div>
+              • Players continue guessing until they correctly guess all 4
+              digits of the target number, earning 4 points represented as 4A.
+            </div>
+            <h5>Example Gameplay</h5>
+            <div>Target number: 6937</div>
+            <div>Guess: 1234 - Result: 1B</div>
+            <div>Guess: 9876 - Result: 1A1B</div>
+            <div>Guess: 6179 - Result: 2B</div>
+            <div>Guess: 6973 - Result: 2A2B</div>
+            <div>Guess: 6937 - Result: 4A (Win)</div>
           </div>
-          <div className="bg-right">
-            <div className="bg-inner"></div>
-          </div>
-          <div className="bg">
-            <div className="bg-inner"></div>
-          </div>
-          <div className="text">Start Game!</div>
-        </button>
+        </div>
       ) : (
         <div>
           {win === 1 ? (
