@@ -76,13 +76,26 @@ const ABgame = () => {
   };
 
   const restartGame = () => {
+    if (hint1Ref.current) {
+      hint1Ref.current.innerHTML = "";
+    }
+    if (hint2Ref.current) {
+      hint2Ref.current.innerHTML = "";
+    }
+    if (hint3Ref.current) {
+      hint3Ref.current.innerHTML = "";
+    }
+    if (hint4Ref.current) {
+      hint4Ref.current.innerHTML = "";
+    }
+    if (logEle.current) {
+      logEle.current.innerHTML = "";
+    }
+
     const newNumbers = generateUniqueRandomNumbers();
     dataKey = newNumbers;
     setplay(1);
     setWin(0);
-    if (logEle.current) {
-      logEle.current.innerHTML = "";
-    }
   };
 
   const resetValue = (numCur1, numCur2, numCur3, numCur4) => {
@@ -231,7 +244,7 @@ const ABgame = () => {
         AB Game in <span>React</span>
       </h1>
       {play === 0 ? (
-        <button onClick={restartGame} className="btn cube cube-hover">
+        <button onClick={startGame} className="btn cube cube-hover">
           <div className="bg-top">
             <div className="bg-inner"></div>
           </div>
@@ -252,7 +265,7 @@ const ABgame = () => {
                   <h1>You Win!</h1>
                 </div>
               </div>
-              <button onClick={startGame} className="btn cube cube-hover">
+              <button onClick={restartGame} className="btn cube cube-hover">
                 <div className="bg-top">
                   <div className="bg-inner"></div>
                 </div>
@@ -266,148 +279,149 @@ const ABgame = () => {
               </button>
             </div>
           ) : (
-            <div></div>
+            <div>
+              <div className="board">
+                <div className="row-show">
+                  <div className="ans">{num1}</div>
+                  <div className="ans">{num2}</div>
+                  <div className="ans">{num3}</div>
+                  <div className="ans">{num4}</div>
+                </div>
+                <div className="row-number">
+                  <div
+                    className="boxes"
+                    ref={num0Ref}
+                    onClick={(e) => {
+                      toggle(e, 0);
+                    }}
+                  >
+                    0
+                  </div>
+                  <div
+                    className="boxes"
+                    ref={num1Ref}
+                    onClick={(e) => {
+                      toggle(e, 1);
+                    }}
+                  >
+                    1
+                  </div>
+                  <div
+                    className="boxes"
+                    ref={num2Ref}
+                    onClick={(e) => {
+                      toggle(e, 2);
+                    }}
+                  >
+                    2
+                  </div>
+                  <div
+                    className="boxes"
+                    ref={num3Ref}
+                    onClick={(e) => {
+                      toggle(e, 3);
+                    }}
+                  >
+                    3
+                  </div>
+                  <div
+                    className="boxes"
+                    ref={num4Ref}
+                    onClick={(e) => {
+                      toggle(e, 4);
+                    }}
+                  >
+                    4
+                  </div>
+                </div>
+                <div className="row-number">
+                  <div
+                    className="boxes"
+                    ref={num5Ref}
+                    onClick={(e) => {
+                      toggle(e, 5);
+                    }}
+                  >
+                    5
+                  </div>
+                  <div
+                    className="boxes"
+                    ref={num6Ref}
+                    onClick={(e) => {
+                      toggle(e, 6);
+                    }}
+                  >
+                    6
+                  </div>
+                  <div
+                    className="boxes"
+                    ref={num7Ref}
+                    onClick={(e) => {
+                      toggle(e, 7);
+                    }}
+                  >
+                    7
+                  </div>
+                  <div
+                    className="boxes"
+                    ref={num8Ref}
+                    onClick={(e) => {
+                      toggle(e, 8);
+                    }}
+                  >
+                    8
+                  </div>
+                  <div
+                    className="boxes"
+                    ref={num9Ref}
+                    onClick={(e) => {
+                      toggle(e, 9);
+                    }}
+                  >
+                    9
+                  </div>
+                </div>
+              </div>
+              <div className="row-log">
+                <div class="log">
+                  <div class="ans-row">
+                    <div class="logbox-title-hint">Hint!</div>
+                    <div
+                      class="logbox-hint"
+                      ref={hint1Ref}
+                      onClick={(e) => {
+                        toggleHintRemove(e);
+                      }}
+                    ></div>
+                    <div
+                      class="logbox-hint"
+                      ref={hint2Ref}
+                      onClick={(e) => {
+                        toggleHintRemove(e);
+                      }}
+                    ></div>
+                    <div
+                      class="logbox-hint"
+                      ref={hint3Ref}
+                      onClick={(e) => {
+                        toggleHintRemove(e);
+                      }}
+                    ></div>
+                    <div
+                      class="logbox-hint"
+                      ref={hint4Ref}
+                      onClick={(e) => {
+                        toggleHintRemove(e);
+                      }}
+                    ></div>
+                  </div>
+                  <div class="res-row-hint">
+                    <div class="ansbox-hint"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
-          <div className="board">
-            <div className="row-show">
-              <div className="ans">{num1}</div>
-              <div className="ans">{num2}</div>
-              <div className="ans">{num3}</div>
-              <div className="ans">{num4}</div>
-            </div>
-            <div className="row-number">
-              <div
-                className="boxes"
-                ref={num0Ref}
-                onClick={(e) => {
-                  toggle(e, 0);
-                }}
-              >
-                0
-              </div>
-              <div
-                className="boxes"
-                ref={num1Ref}
-                onClick={(e) => {
-                  toggle(e, 1);
-                }}
-              >
-                1
-              </div>
-              <div
-                className="boxes"
-                ref={num2Ref}
-                onClick={(e) => {
-                  toggle(e, 2);
-                }}
-              >
-                2
-              </div>
-              <div
-                className="boxes"
-                ref={num3Ref}
-                onClick={(e) => {
-                  toggle(e, 3);
-                }}
-              >
-                3
-              </div>
-              <div
-                className="boxes"
-                ref={num4Ref}
-                onClick={(e) => {
-                  toggle(e, 4);
-                }}
-              >
-                4
-              </div>
-            </div>
-            <div className="row-number">
-              <div
-                className="boxes"
-                ref={num5Ref}
-                onClick={(e) => {
-                  toggle(e, 5);
-                }}
-              >
-                5
-              </div>
-              <div
-                className="boxes"
-                ref={num6Ref}
-                onClick={(e) => {
-                  toggle(e, 6);
-                }}
-              >
-                6
-              </div>
-              <div
-                className="boxes"
-                ref={num7Ref}
-                onClick={(e) => {
-                  toggle(e, 7);
-                }}
-              >
-                7
-              </div>
-              <div
-                className="boxes"
-                ref={num8Ref}
-                onClick={(e) => {
-                  toggle(e, 8);
-                }}
-              >
-                8
-              </div>
-              <div
-                className="boxes"
-                ref={num9Ref}
-                onClick={(e) => {
-                  toggle(e, 9);
-                }}
-              >
-                9
-              </div>
-            </div>
-          </div>
-          <div className="row-log">
-            <div class="log">
-              <div class="ans-row">
-                <div class="logbox-title-hint">Hint!</div>
-                <div
-                  class="logbox-hint"
-                  ref={hint1Ref}
-                  onClick={(e) => {
-                    toggleHintRemove(e);
-                  }}
-                ></div>
-                <div
-                  class="logbox-hint"
-                  ref={hint2Ref}
-                  onClick={(e) => {
-                    toggleHintRemove(e);
-                  }}
-                ></div>
-                <div
-                  class="logbox-hint"
-                  ref={hint3Ref}
-                  onClick={(e) => {
-                    toggleHintRemove(e);
-                  }}
-                ></div>
-                <div
-                  class="logbox-hint"
-                  ref={hint4Ref}
-                  onClick={(e) => {
-                    toggleHintRemove(e);
-                  }}
-                ></div>
-              </div>
-              <div class="res-row-hint">
-                <div class="ansbox-hint"></div>
-              </div>
-            </div>
-          </div>
           <div className="row-log-data" ref={logEle}></div>
         </div>
       )}
