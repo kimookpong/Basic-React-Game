@@ -261,7 +261,28 @@ const ABgame = () => {
           {win === 1 ? (
             <div className="win-box">
               <div className="win">
-                <div className="win-text">
+                <div class="confetti">
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                  <div class="confetti-piece"></div>
+                </div>
+                <div className="win-text ">
                   <h1>You Win!</h1>
                 </div>
               </div>
