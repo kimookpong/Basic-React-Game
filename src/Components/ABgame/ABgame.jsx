@@ -135,6 +135,7 @@ const ABgame = () => {
     logElement(currently, logArray.length);
     if (result === "4A") {
       setWin(1);
+      logEle.current.innerHTML = "";
     }
   };
   const toggle = (e, num) => {
