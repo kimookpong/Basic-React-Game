@@ -73,6 +73,7 @@ const ABgame = () => {
     const newNumbers = generateUniqueRandomNumbers();
     dataKey = newNumbers;
     setplay(1);
+    setLog([]);
   };
 
   const restartGame = () => {
@@ -96,6 +97,7 @@ const ABgame = () => {
     dataKey = newNumbers;
     setplay(1);
     setWin(0);
+    setLog([]);
   };
 
   const resetValue = (numCur1, numCur2, numCur3, numCur4) => {
