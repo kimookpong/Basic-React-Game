@@ -321,6 +321,7 @@ const ABgame = () => {
                 </div>
                 <div className="win-text ">
                   <h1>You Win!</h1>
+                  <h4>in {log.length} rounds</h4>
                 </div>
               </div>
               <button onClick={restartGame} className="btn cube cube-hover">
