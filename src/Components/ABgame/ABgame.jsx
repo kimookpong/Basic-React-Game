@@ -194,22 +194,14 @@ const ABgame = () => {
   };
 
   const logElement = (log, round) => {
-    const div = document.createElement("div"); // Create a new div element
-    div.className = "log"; // Add the "log" class to the div
-
-    // Create the "ans-row" div
+    const div = document.createElement("div");
+    div.className = "log";
     const ansRowDiv = document.createElement("div");
     ansRowDiv.className = "ans-row";
-
-    // Create the "logbox-title" div
     const logboxTitleDiv = document.createElement("div");
     logboxTitleDiv.className = "logbox-title";
     logboxTitleDiv.textContent = `Round ${round}`;
-
-    // Append the "logbox-title" div to the "ans-row" div
     ansRowDiv.appendChild(logboxTitleDiv);
-
-    // Create and append the "logbox" divs for each number
     for (let i = 1; i <= 4; i++) {
       const logboxDiv = document.createElement("div");
       logboxDiv.className = "logbox";
@@ -217,26 +209,14 @@ const ABgame = () => {
       logboxDiv.addEventListener("click", () => toggleHint(i, log[`num${i}`]));
       ansRowDiv.appendChild(logboxDiv);
     }
-
-    // Append the "ans-row" div to the main "log" div
     div.appendChild(ansRowDiv);
-
-    // Create the "res-row" div
     const resRowDiv = document.createElement("div");
     resRowDiv.className = "res-row";
-
-    // Create the "ansbox" div and set its text content
     const ansboxDiv = document.createElement("div");
     ansboxDiv.className = "ansbox";
     ansboxDiv.textContent = log.result;
-
-    // Append the "ansbox" div to the "res-row" div
     resRowDiv.appendChild(ansboxDiv);
-
-    // Append the "res-row" div to the main "log" div
     div.appendChild(resRowDiv);
-
-    // Insert the constructed div into the logEle element
     const firstChild = logEle.current.firstChild;
     logEle.current.insertBefore(div, firstChild);
   };
@@ -246,7 +226,7 @@ const ABgame = () => {
       <h1 className="title">
         AB Game in <span>React</span>
       </h1>
-      <h5 className="subtitle">by kimookpong</h5>
+      <h5 className="subtitle">by Hakim Mudor</h5>
       {play === 0 ? (
         <div className="">
           <button onClick={startGame} className="btn cube cube-hover">
