@@ -204,7 +204,7 @@ const ABgame = () => {
     // Create the "logbox-title" div
     const logboxTitleDiv = document.createElement("div");
     logboxTitleDiv.className = "logbox-title";
-    logboxTitleDiv.textContent = `Round ${round}`;
+    logboxTitleDiv.textContent = `รอบที่ ${round}`;
 
     // Append the "logbox-title" div to the "ans-row" div
     ansRowDiv.appendChild(logboxTitleDiv);
@@ -244,7 +244,7 @@ const ABgame = () => {
   return (
     <div className="container">
       <h1 className="title">
-        AB Game in <span>React</span>
+        AB <span>Game</span>
       </h1>
       <h5 className="subtitle">by kimookpong</h5>
       {play === 0 ? (
@@ -259,38 +259,38 @@ const ABgame = () => {
             <div className="bg">
               <div className="bg-inner"></div>
             </div>
-            <div className="text">Start Game!</div>
+            <div className="text">เริ่มเกม!</div>
           </button>
           <div className="howToPlay">
-            <h5>How to Play the AB Game</h5>
+            <h3>วิธีเล่นเกม AB</h3>
             <div>
-              The AB Game is a guessing game where players try to guess a
-              4-digit number, with each digit being unique.
+              เกม AB เป็นเกมทายผลที่ผู้เล่นพยายามเดาตัวเลข 4 หลัก
+              โดยแต่ละหลักไม่ซ้ำกัน
             </div>
-            <h5>Rules</h5>
+            <h3>กฎ</h3>
             <div>
-              • The game consists of a target 4-digit number where each digit is
-              unique.
+              • เกมประกอบด้วยตัวเลข 4 หลักเป้าหมายซึ่งแต่ละหลักไม่ซ้ำกัน
             </div>
-            <div>• Players attempt to guess the target number.</div>
+            <div>• ผู้เล่นพยายามทายหมายเลขเป้าหมาย</div>
             <div>
-              • For each guess: If a digit in the guess matches a digit in the
-              target number and is in the same position, it earns a point,
-              represented as A. If a digit in the guess matches a digit in the
-              target number but is in a different position, it earns a point,
-              represented as B.
+              • สำหรับการเดาแต่ละครั้ง:
+              <br />
+              หากหลักในการทายตรงกับตัวเลขในหมายเลขเป้าหมายและอยู่ในตำแหน่งเดียวกันจะได้รับคะแนนแสดงเป็น
+              A<br />
+              หากหลักในการทายตรงกับตัวเลขในหมายเลขเป้าหมายแต่อยู่ใน
+              ตำแหน่งอื่นจะได้รับคะแนนซึ่งแสดงเป็น B
             </div>
             <div>
-              • Players continue guessing until they correctly guess all 4
-              digits of the target number, earning 4 points represented as 4A.
+              • ผู้เล่นทายต่อไปจนกว่าจะเดาถูกทั้ง 4 หลักของหมายเลขเป้าหมาย
+              โดยจะได้ 4 คะแนนแทน 4A
             </div>
-            <h5>Example Gameplay</h5>
-            <div>Target number: 6937</div>
-            <div>Guess: 1234 - Result: 1B</div>
-            <div>Guess: 9876 - Result: 1A1B</div>
-            <div>Guess: 6179 - Result: 2B</div>
-            <div>Guess: 6973 - Result: 2A2B</div>
-            <div>Guess: 6937 - Result: 4A (Win)</div>
+            <h3>ตัวอย่างการเล่นเกม</h3>
+            <div>หมายเลขเป้าหมาย: 6937</div>
+            <div>เดา: 1234 - ผลลัพธ์: 1B</div>
+            <div>เดา: 9876 - ผลลัพธ์: 1A1B</div>
+            <div>เดา: 6179 - ผลลัพธ์: 2B</div>
+            <div>เดา: 6973 - ผลลัพธ์: 2A2B</div>
+            <div>เดา: 6937 - ผลลัพธ์: 4A (ชนะ)</div>
           </div>
         </div>
       ) : (
@@ -320,7 +320,7 @@ const ABgame = () => {
                   <div class="confetti-piece"></div>
                 </div>
                 <div className="win-text ">
-                  <h1>You Win!</h1>
+                  <h1>คุณชนะ!</h1>
                 </div>
               </div>
               <button onClick={restartGame} className="btn cube cube-hover">
@@ -333,7 +333,7 @@ const ABgame = () => {
                 <div className="bg">
                   <div className="bg-inner"></div>
                 </div>
-                <div className="text">Start Again!</div>
+                <div className="text">เริ่มอีกครั้ง!</div>
               </button>
             </div>
           ) : (
@@ -443,7 +443,7 @@ const ABgame = () => {
               <div className="row-log">
                 <div class="log">
                   <div class="ans-row">
-                    <div class="logbox-title-hint">Hint!</div>
+                    <div class="logbox-title-hint">ทดไว้!</div>
                     <div
                       class="logbox-hint"
                       ref={hint1Ref}
